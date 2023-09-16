@@ -7,43 +7,60 @@ export default function ContactForm() {
   const [content, setContent] = useState<string>('');
   return (
     <div className='bg-red-100 pt-3 mx-20 my-5'>
-      <label className='block text-lg font-medium leading-6 text-gray-800 text-center'>
+      <label className='block text-lg font-bold leading-6 text-gray-800 text-center'>
         お問い合わせフォーム
       </label>
       <div className='px-5 py-5 my-5 mx-5'>
-        <div>
-          <label className='text-gray-800'>Name</label>
+        <div className='flex items-center my-1'>
+          <div className='flex-initial w-32'>
+            <label className='text-gray-800'>お名前</label>
+          </div>
           <input
             type='text'
             name='name'
             id='name'
             value={text}
             onChange={(event) => setText(event.target.value)}
-            className='rounded-md mx-10 py-1.5 pl-1 pr-20 text-gray-900'
+            className='flex-initial rounded-md w-96 h-10 px-2 text-gray-900'
           />
         </div>
-        <div>
-          <label className='text-gray-800'>Email</label>
+        <div className='flex items-center my-1'>
+          <div className='flex-initial w-32'>
+            <label className='text-gray-800'>Email</label>
+          </div>
           <input
-            type='text'
+            type='email'
             name='email'
             id='email'
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            className='rounded-md mx-10 py-1.5 pl-1 pr-20 text-gray-900'
+            className='flex-initial rounded-md w-96 h-10 px-2 text-gray-900'
           />
         </div>
-        <div>
-          <label className='text-gray-800'>内容</label>
-          <input
-            type='text'
+        <div className='flex items-center my-1'>
+          <div className='flex-initial w-32'>
+            <label className='text-gray-800'>内容</label>
+          </div>
+          <textarea
             name='email'
             value={content}
             onChange={(event) => setContent(event.target.value)}
-            className='rounded-md mx-10 py-1.5 pl-1 pr-96 text-gray-900'
+            className='flex-auto rounded-md h-96 px-2 text-gray-900'
           />
+          <div className='flex-initial w-32'></div>
         </div>
-        <button className='rounded-md  bg-blue-200 text-gray-900'>送信</button>
+        <div className='flex justify-center'>
+          <button
+            className='btn btn-blue w-64 mx-auto'
+            onClick={() =>
+              confirm('この内容でお間違いないですか？')
+                ? console.log('ok')
+                : console.log('cancel')
+            }
+          >
+            確認画面へ
+          </button>
+        </div>
       </div>
     </div>
   );
