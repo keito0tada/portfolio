@@ -58,7 +58,7 @@ export default function ContactForm() {
                 : console.log('cancel')
             }
           >
-            確認画面へ
+            送信
           </button>
         </div>
       </div>

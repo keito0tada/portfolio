@@ -3,10 +3,10 @@ export default function Header() {
   return (
     <header>
       <nav>
-        <h1 className='h-10 my-5 text-3xl text-center'>
+        <h1 className='h-10 mt-5 text-3xl text-center'>
           <Link href='/'>Keito Tada</Link>
         </h1>
-        <ul className='flex justify-end'>
+        <ul className='flex mb-5 justify-end'>
           <li className='header-item'>
             <Link href='/about' className='hover:underline'>
               About
